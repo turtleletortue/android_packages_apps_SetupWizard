@@ -31,8 +31,15 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
     private EnableAccessibilityController mEnableAccessibilityController;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        try{
+            Process screenResize = Runtime.getRuntime().exec("wm size 640x480");
+            screenResize.waitFor();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
         mRootView = findViewById(R.id.root);
         setNextText(R.string.next);
         setBackText(R.string.emergency_call);
