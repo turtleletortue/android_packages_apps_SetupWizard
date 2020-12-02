@@ -40,6 +40,10 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
         catch (Exception e) {
             e.printStackTrace();
         }
+
+        // Set double clicking home button as app switcher
+        CMSettings.System.putInt(getContentResolver(), CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION, 2);
+
         mRootView = findViewById(R.id.root);
         setNextText(R.string.next);
         setBackText(R.string.emergency_call);
