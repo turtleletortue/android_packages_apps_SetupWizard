@@ -23,6 +23,9 @@ import android.view.View;
 
 import com.cyanogenmod.setupwizard.util.EnableAccessibilityController;
 
+// To set hardware keys
+import cyanogenmod.providers.CMSettings;
+
 public class WelcomeActivity extends BaseSetupWizardActivity {
 
     public static final String TAG = WelcomeActivity.class.getSimpleName();
